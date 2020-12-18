@@ -1,0 +1,25 @@
+import Vue from 'vue'
+import App from './App.vue'
+import router from './router'
+import store from './store'
+import 'lib-flexible/flexible.js'
+import MintUI from 'mint-ui'
+import 'mint-ui/lib/style.css'
+import ElementUI from 'element-ui';
+import 'element-ui/lib/theme-chalk/index.css';
+
+import VueLazyLoad from 'vue-lazyload'
+Vue.use(VueLazyLoad, {
+  preLoad: 1.3,
+  error: 'dist/error.png',
+  loading: 'dist/loading.gif',
+  attempt: 1
+})
+Vue.config.productionTip = false
+Vue.use(MintUI)
+Vue.use(ElementUI);
+new Vue({
+  router,
+  store,
+  render: h => h(App)
+}).$mount('#app')
